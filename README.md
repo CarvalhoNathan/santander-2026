@@ -18,7 +18,8 @@ santander-2026/
 │   ├── 02-html5-css3/
 │   └── 03-javascript-es6/
 ├── 03-react-front-end/            # Biblioteca React, Hooks, APIs e Projetos
-│   └── 01-introducao-ao-react/
+│   ├── 01-introducao-ao-react/
+│   └── 02-vantagens-e-desvantagens/
 └── 04-desafios/                   # Desafios de código e projetos oficiais da DIO
     ├── desafios-de-codigo/
     └── desafios-de-projeto/

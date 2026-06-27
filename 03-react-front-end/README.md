@@ -5,8 +5,10 @@ Este módulo é voltado ao estudo do **React**, biblioteca Javascript líder par
 ## 📂 Submódulos
 
 1. **[Introdução ao React](./01-introducao-ao-react/)** — Conceitos iniciais, ecossistema, comparação com frameworks, SPA vs SSR, e estrutura básica.
-2. **[Componentes e Hooks (Em breve)](#)** — Componentização, uso de hooks integrados (`useState`, `useEffect`, `useContext`) e gerenciamento de estado.
-3. **[Roteamento e APIs (Em breve)](#)** — Navegação com React Router, consumo de dados de APIs e boas práticas de integração.
+2. **[Vantagens, Desvantagens e Evolução](./02-vantagens-e-desvantagens/)** — Análise de prós/contras, evolução histórica do ecossistema e curiosidades de criação.
+3. **[Componentes e Hooks (Em breve)](#)** — Componentização, uso de hooks integrados (`useState`, `useEffect`, `useContext`) e gerenciamento de estado.
+4. **[Roteamento e APIs (Em breve)](#)** — Navegação com React Router, consumo de dados de APIs e boas práticas de integração.
+
 
 ---
 
