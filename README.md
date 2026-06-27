@@ -1,27 +1,51 @@
-# Bootcamp Santander 2026 — AI React Front-end
+# 🎓 Bootcamp Santander 2026 — AI React Front-end
 
-Repositório de estudos e projetos desenvolvidos durante o **Bootcamp Santander 2026 - AI React Front-end**, programa de capacitação oferecido pelo Santander em parceria com a [DIO](https://dio.me), com foco em desenvolvimento front-end moderno e uso prático de Inteligência Artificial.
-
----
-
-## 🛠️ Tecnologias
-
-Conteúdos estudados e praticados ao longo do bootcamp:
-
-- **HTML5 e CSS3** — estrutura e estilo para a web
-- **JavaScript** — lógica, manipulação do DOM e boas práticas
-- **React** — componentes, hooks, estado e roteamento
-- **Inteligência Artificial** — chatbots, copilotos e agentes aplicados ao desenvolvimento
-- **Git e GitHub** — versionamento e organização de projetos
+Repositório de estudos, anotações e projetos práticos desenvolvidos durante o **Bootcamp Santander 2026 - AI React Front-end**, promovido pela [DIO](https://dio.me) em parceria com o Santander. O programa foca no desenvolvimento front-end moderno utilizando React e na integração prática de Inteligências Artificiais no fluxo de trabalho.
 
 ---
 
-## 📂 Módulos
+## 📂 Estrutura do Repositório
 
-| # | Módulo | Descrição | Status |
-| :- | :----- | :-------- | :----- |
-| 01 | [Potencializando Estudos e Carreira com IA](./potencializando-estudos-carreira-com-ia/) | Como usar chatbots, copilotos e agentes para acelerar o aprendizado em tecnologia | ✅ Concluído |
+O repositório está organizado cronologicamente por módulos, facilitando o acesso ao conteúdo teórico e prático:
 
-> Novos módulos serão adicionados conforme o bootcamp avança.
+```text
+santander-2026/
+├── 01-ia-e-produtividade/         # IA na prática (chatbots, copilotos, agentes)
+│   ├── anotacoes/
+│   └── README.md
+├── 02-fundamentos-web/            # Base de desenvolvimento web e Git
+│   ├── 01-git-e-github/
+│   ├── 02-html5-css3/
+│   └── 03-javascript-es6/
+├── 03-react-front-end/            # Biblioteca React, Hooks, APIs e Projetos
+│   └── 01-introducao-ao-react/
+└── 04-desafios/                   # Desafios de código e projetos oficiais da DIO
+    ├── desafios-de-codigo/
+    └── desafios-de-projeto/
+```
 
-Criado por **Nathan Carvalho**.
+---
+
+## 🛠️ Trilha de Aprendizado
+
+| Módulo | Conteúdo | Status |
+| :--- | :--- | :--- |
+| **[01. IA e Produtividade](./01-ia-e-produtividade/)** | Ferramentas de IA (ChatGPT, Claude, Gemini), Engenharia de Prompts, Chatbots, Copilotos e Agentes autônomos. | ✅ Concluído |
+| **[02. Fundamentos Web](./02-fundamentos-web/)** | Controle de versão (Git/GitHub), semântica com HTML5, estilização com CSS3 (Flexbox/Grid), e programação assíncrona com JavaScript (ES6+). | ⏳ Em Progresso |
+| **[03. React Front-End](./03-react-front-end/)** | Criação de SPAs, componentes funcionais, gerenciamento de estado (Hooks) e consumo de APIs. | ⏳ Em Progresso |
+| **[04. Desafios](./04-desafios/)** | Desafios de algoritmo/código e projetos oficiais entregues ao longo do bootcamp. | ⏳ Em Progresso |
+
+---
+
+## 🚀 Tecnologias e Conceitos Estudados
+
+- **Controle de Versão:** Git & GitHub
+- **Web Design:** HTML5 semântico, CSS3 responsivo (Mobile-First)
+- **Programação:** JavaScript moderno (ES6+, Arrow Functions, Promises, Async/Await)
+- **Desenvolvimento Componentizado:** React, hooks de estado e de efeitos
+- **Inteligência Artificial:** Chatbots, Copilotos de código e Agentes aplicados à produtividade no desenvolvimento
+
+---
+
+Criado com 💙 por **Nathan Carvalho**.
+
