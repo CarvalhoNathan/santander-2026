@@ -20,7 +20,8 @@ santander-2026/
 ├── 03-react-front-end/            # Biblioteca React, Hooks, APIs e Projetos
 │   ├── 01-introducao-ao-react/
 │   ├── 02-vantagens-e-desvantagens/
-│   └── 03-arquitetura-e-mentalidade/
+│   ├── 03-arquitetura-e-mentalidade/
+│   └── 04-preparando-ambiente/
 └── 04-desafios/                   # Desafios de código e projetos oficiais da DIO
     ├── desafios-de-codigo/
     └── desafios-de-projeto/
@@ -49,5 +50,6 @@ santander-2026/
 
 ---
 
-Criado com 💙 por **Nathan Carvalho**.
+Criado por **Nathan Carvalho**.
+Aulas ministradas por **Michele Ambrosio**.
 
