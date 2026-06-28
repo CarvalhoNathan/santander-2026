@@ -21,7 +21,8 @@ santander-2026/
 │   ├── 01-introducao-ao-react/
 │   ├── 02-vantagens-e-desvantagens/
 │   ├── 03-arquitetura-e-mentalidade/
-│   └── 04-preparando-ambiente/
+│   ├── 04-preparando-ambiente/
+│   └── 05-compiladores-empacotadores/
 └── 04-desafios/                   # Desafios de código e projetos oficiais da DIO
     ├── desafios-de-codigo/
     └── desafios-de-projeto/
