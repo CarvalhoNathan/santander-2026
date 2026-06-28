@@ -1,6 +1,6 @@
-# 🎓 Bootcamp Santander 2026 — AI React Front-end
+# Bootcamp Santander 2026 — AI React Front-end
 
-Repositório de estudos, anotações e projetos práticos desenvolvidos durante o **Bootcamp Santander 2026 - AI React Front-end**, promovido pela [DIO](https://dio.me) em parceria com o Santander. O programa foca no desenvolvimento front-end moderno utilizando React e na integração prática de Inteligências Artificiais no fluxo de trabalho.
+Repositório de estudos, anotações e projetos práticos desenvolvidos durante o [**Bootcamp Santander 2026 - AI React Front-end**](https://web.dio.me/track/1eb0ee72-71d9-4890-9975-52f27ae5aee5), promovido pela [**DIO**](https://dio.me) em parceria com o Santander. O programa foca no desenvolvimento front-end moderno utilizando React e na integração prática de Inteligências Artificiais no fluxo de trabalho.
 
 ---
 
@@ -8,7 +8,7 @@ Repositório de estudos, anotações e projetos práticos desenvolvidos durante 
 
 O repositório está organizado cronologicamente por módulos, facilitando o acesso ao conteúdo teórico e prático:
 
-```text
+```c#
 santander-2026/
 ├── 01-ia-e-produtividade/         # IA na prática (chatbots, copilotos, agentes)
 │   ├── anotacoes/
@@ -29,12 +29,12 @@ santander-2026/
 
 ---
 
-## 🛠️ Trilha de Aprendizado
+## 🗺️ Trilha de Aprendizado
 
 | Módulo | Conteúdo | Status |
 | :--- | :--- | :--- |
-| **[01. IA e Produtividade](./01-ia-e-produtividade/)** | Ferramentas de IA (ChatGPT, Claude, Gemini), Engenharia de Prompts, Chatbots, Copilotos e Agentes autônomos. | ✅ Concluído |
-| **[02. Fundamentos Web](./02-fundamentos-web/)** | Controle de versão (Git/GitHub), semântica com HTML5, estilização com CSS3 (Flexbox/Grid), e programação assíncrona com JavaScript (ES6+). | ⏳ Em Progresso |
+| **[01. IA e Produtividade](./01-ia-e-produtividade/)** | Ferramentas de IA (**ChatGPT, Claude, Gemini**), Engenharia de Prompts, Chatbots, Copilotos e Agentes autônomos. | ✅ Concluído |
+| **[02. Fundamentos Web](./02-fundamentos-web/)** | Controle de versão (**Git/GitHub**), semântica com HTML5, estilização com CSS3 (Flexbox/Grid), e programação assíncrona com **JavaScript (ES6+)**. | ⏳ Em Progresso |
 | **[03. React Front-End](./03-react-front-end/)** | Criação de SPAs, componentes funcionais, gerenciamento de estado (Hooks) e consumo de APIs. | ⏳ Em Progresso |
 | **[04. Desafios](./04-desafios/)** | Desafios de algoritmo/código e projetos oficiais entregues ao longo do bootcamp. | ⏳ Em Progresso |
 
@@ -50,6 +50,5 @@ santander-2026/
 
 ---
 
-Criado por **Nathan Carvalho**.
-Aulas ministradas por **Michele Ambrosio**.
+Repositório criado por **Nathan Carvalho**, com base nas aulas ministradas por **Michele Ambrosio**.
 
