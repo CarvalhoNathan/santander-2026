@@ -11,9 +11,6 @@ Este módulo é voltado ao estudo do **React**, biblioteca Javascript líder par
 5. **[Componentes e Hooks (Em breve)](#)** — Componentização, uso de hooks integrados (`useState`, `useEffect`, `useContext`) e gerenciamento de estado.
 6. **[Roteamento e APIs (Em breve)](#)** — Navegação com React Router, consumo de dados de APIs e boas práticas de integração.
 
-
-
-
 ---
 
 ## 🛠️ Como utilizar esta pasta
