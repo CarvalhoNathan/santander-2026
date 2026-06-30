@@ -54,8 +54,7 @@ Para quem está começando no ecossistema JavaScript, a diferença entre esses c
 ---
 
 ### O papel do Babel e do SWC
-O **Babel** e o **SWC** são **transpiladores**. Eles analisam seus arquivos `.jsx` ou `.tsx` e geram arquivos `.js` equivalentes.
-
+O **Babel** e o **SWC** são **transpiladores**. Eles analisam seus arquivos `.jsx` ou `.tsx` e geram arquivos `.js` equivalentes. Portanto eles são usados para converter JSX, TypeScript, e outras sintaxes do JavaScript moderno para versões mais antigas do JavaScript que são compatíveis com os navegadores.
 
 #### Exemplo Prático de Transpilação de JSX:
 
