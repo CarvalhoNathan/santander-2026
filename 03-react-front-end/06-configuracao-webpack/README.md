@@ -31,6 +31,12 @@ Crie a estrutura de diretórios padrão:
 * No `App.jsx`, criamos o componente básico que desejamos renderizar.
 * No `index.js`, importamos o `createRoot` de `react-dom/client` (essencial a partir do React 18) e o componente `App` para realizar a montagem do projeto na div `#root`.
 
+Agora, vamos rodar o comando para instalar o Webpack e seus plugins de desenvolvimento:
+```bash
+npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin
+```
+E, após isso, vamos criar o arquivo `webpack.config.js` na raiz do projeto.
+
 
 ## ⚙️ Configurando o Babel (Transpilação)
 
