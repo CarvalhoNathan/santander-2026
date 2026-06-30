@@ -26,6 +26,12 @@ Crie a estrutura de diretórios padrão:
 
 ---
 
+### 3. Implementação dos Arquivos Iniciais:
+* Criamos o HTML de entrada em `public/index.html` com a div `#root`.
+* No `App.jsx`, criamos o componente básico que desejamos renderizar.
+* No `index.js`, importamos o `createRoot` de `react-dom/client` (essencial a partir do React 18) e o componente `App` para realizar a montagem do projeto na div `#root`.
+
+
 ## ⚙️ Configurando o Babel (Transpilação)
 
 Para que o Webpack consiga interpretar arquivos contendo sintaxe JSX e JavaScript moderno, precisamos do **Babel** e do seu respectivo carregador (*loader*):
@@ -137,4 +143,4 @@ Adicione os seguintes scripts no arquivo `package.json`:
     ```bash
     npm run build
     ```
-    Isso gerará a pasta `dist/` contendo o HTML minificado e o arquivo `bundle.js` otimizado pronto para deploy.
+    Isso gerará a pasta `dist/` contendo o HTML minificado e o arquivo `bundle.js` otimizado pronto para deploy.
