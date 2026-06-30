@@ -1,6 +1,6 @@
 # ⚙️ Configuração Manual de Webpack e Babel
 
-Este módulo ensina como configurar manualmente o ambiente de desenvolvimento React a partir do zero, sem o auxílio de ferramentas prontas como o *Create React App* ou o *Vite*. Isso é fundamental para compreender como loaders, transpiladores e empacotadores interagem sob o capô.
+Este módulo ensina como configurar manualmente o ambiente de desenvolvimento **React** a partir do zero, sem o auxílio de ferramentas prontas como o ```Create React App``` ou o ```Vite```. Isso é fundamental para compreender como loaders, transpiladores e empacotadores interagem sob o capô.
 
 ---
 
@@ -13,8 +13,8 @@ Este módulo ensina como configurar manualmente o ambiente de desenvolvimento Re
    ```bash
    npm init -y
    ```
-   > [!IMPORTANT]
-   > Certifique-se de adicionar a linha `"type": "module"` no seu `package.json` para indicar que o projeto utilizará módulos nativos do ES6 (`import`/`export`) em vez do CommonJS (`require`).
+> [!IMPORTANT]
+> Certifique-se de adicionar a linha `"type": "module"` no seu `package.json` para indicar que o projeto utilizará módulos nativos do ES6 (`import`/`export`) em vez do CommonJS (`require`).
 
 2. **Instalar as dependências base do React:**
    ```bash
