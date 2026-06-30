@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "esbuild ./src/index.js --outfile=dist/bundle.js --loader:.js=jsx --bundle --minify --jsx=automatic --serve=3000 --servedir=dist --watch",
     "build": "esbuild ./src/index.js --outfile=dist/bundle.js --loader:.js=jsx --bundle --minify --jsx=automatic",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
