@@ -148,3 +148,42 @@ No seu arquivo `package.json`, configure a chave `"scripts"` para adicionar os a
     ```
     Isso gerará a pasta `dist/` contendo o HTML minificado e o arquivo `bundle.js` pronto para hospedagem.
 
+---
+
+## ⚡ Configuração Rápida com Esbuild (Alternativa Moderna)
+
+O **Esbuild** é um empacotador e transpilador extremamente veloz escrito em Go, que faz o papel tanto do Webpack quanto do Babel em uma fração de segundos.
+
+### 1. Instalação:
+Instale o `esbuild` como dependência de desenvolvimento no seu projeto:
+```bash
+npm install -D esbuild
+```
+
+### 2. Estrutura de Pastas Básica:
+```text
+├── react-esbuild-config/
+│   ├── dist/
+│   │   └── index.html      # Contém a div #root e chama <script src="./bundle.js"></script>
+│   ├── src/
+│   │   ├── App.jsx         # Componente React principal
+│   │   └── index.js        # Inicialização do createRoot
+│   └── package.json
+```
+
+### 3. Configurando Scripts no `package.json`:
+Substitua seus atalhos na chave `"scripts"` para utilizar a CLI do Esbuild:
+
+```json
+"scripts": {
+  "start": "esbuild ./src/index.js --outfile=dist/bundle.js --loader:.js=jsx --bundle --minify --jsx=automatic --serve=3000 --servedir=dist --watch",
+  "build": "esbuild ./src/index.js --outfile=dist/bundle.js --loader:.js=jsx --bundle --minify --jsx=automatic"
+}
+```
+
+*   **`--loader:.js=jsx`**: Informa ao Esbuild para tratar arquivos com extensão `.js` como JSX, permitindo usar tags HTML neles.
+*   **`--jsx=automatic`**: Ativa o suporte ao novo runtime do JSX do React 17/18/19, permitindo omitir o `import React from 'react'`.
+*   **`--serve=3000 --servedir=dist`**: Sobe um servidor HTTP de desenvolvimento local no endereço `http://localhost:3000` servindo a pasta `dist/`.
+*   **`--watch`**: Monitora alterações nos arquivos de origem e reconstrói o bundle instantaneamente ao salvar.
+
+
