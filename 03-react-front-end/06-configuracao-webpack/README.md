@@ -13,6 +13,8 @@ Este módulo ensina como configurar manualmente o ambiente de desenvolvimento Re
    ```bash
    npm init -y
    ```
+   > [!IMPORTANT]
+   > Certifique-se de adicionar a linha `"type": "module"` no seu `package.json` para indicar que o projeto utilizará módulos nativos do ES6 (`import`/`export`) em vez do CommonJS (`require`).
 
 2. **Instalar as dependências base do React:**
    ```bash
@@ -101,6 +103,9 @@ Com o Babel pronto para converter o código, precisamos configurar o **Webpack**
            exclude: /node_modules/, // Evitar processamento de pacotes externos
            use: {
              loader: 'babel-loader', // Usar as regras do Babel configuradas no .babelrc
+           },
+           resolve: {
+             fullySpecified: false, // Desativa a obrigatoriedade de extensões (.js/.jsx) nas importações do ESM
            },
          },
        ],
