@@ -56,8 +56,8 @@ Para que o Webpack consiga ler e empacotar a sintaxe JSX e os recursos mais mode
      ]
    }
    ```
-   > [!TIP]
-   > O `"runtime": "automatic"` permite que você escreva JSX sem precisar importar explicitamente `React` no topo de todos os componentes.
+> [!TIP]
+> O `"runtime": "automatic"` permite que você escreva JSX sem precisar importar explicitamente `React` no topo de todos os componentes.
 
 ---
 
