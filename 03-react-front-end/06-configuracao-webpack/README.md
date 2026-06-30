@@ -1,137 +1,129 @@
 # ⚙️ Configuração Manual de Webpack e Babel
 
-Este módulo ensina como configurar manualmente o ambiente de desenvolvimento React a partir do zero, sem o auxílio de ferramentas prontas como o Create React App ou o Vite. Isso é fundamental para compreender como loaders, transpiladores e empacotadores interagem sob o capô.
+Este módulo ensina como configurar manualmente o ambiente de desenvolvimento React a partir do zero, sem o auxílio de ferramentas prontas como o *Create React App* ou o *Vite*. Isso é fundamental para compreender como loaders, transpiladores e empacotadores interagem sob o capô.
 
 ---
 
-## 📂 Passos Iniciais de Configuração
+## 📂 Guia de Configuração Passo a Passo
 
-### 1. Inicializando o Projeto e Dependências Base
-Começamos criando a estrutura inicial e instalando as bibliotecas essenciais do React:
-```bash
-# 1. Iniciar o gerenciador de pacotes (gera o package.json)
-npm init -y
+### Passo 1: Inicialização e Estrutura do Projeto
 
-# 2. Instalar o React e React-DOM
-npm install react react-dom
-```
+1. **Iniciar o gerenciador de pacotes:**
+   Cria o arquivo `package.json` na raiz:
+   ```bash
+   npm init -y
+   ```
 
-### 2. Estrutura de Pastas e Arquivos de Entrada
-Crie a estrutura de diretórios padrão:
-*   **`public/`** — Arquivos que serão servidos diretamente (sem transpilação).
-    *   **`index.html`** — O HTML principal com o elemento container `<div id="root"></div>`.
-*   **`src/`** — O código-fonte da nossa aplicação.
-    *   **`index.js`** — O ponto de entrada da aplicação, onde montamos o React.
-    *   **`App.jsx`** — O componente principal da nossa interface.
+2. **Instalar as dependências base do React:**
+   ```bash
+   npm install react react-dom
+   ```
 
----
-
-### 3. Implementação dos Arquivos Iniciais:
-* Criamos o HTML de entrada em `public/index.html` com a div `#root`.
-* No `App.jsx`, criamos o componente básico que desejamos renderizar.
-* No `index.js`, importamos o `createRoot` de `react-dom/client` (essencial a partir do React 18) e o componente `App` para realizar a montagem do projeto na div `#root`.
-
-Agora, vamos rodar o comando para instalar o Webpack e seus plugins de desenvolvimento:
-```bash
-npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin
-```
-E, após isso, vamos criar o arquivo `webpack.config.js` na raiz do projeto.
-
-
-## ⚙️ Configurando o Babel (Transpilação)
-
-Para que o Webpack consiga interpretar arquivos contendo sintaxe JSX e JavaScript moderno, precisamos do **Babel** e do seu respectivo carregador (*loader*):
-
-### 1. Instalar as Dependências do Babel:
-```bash
-npm install -D @babel/core @babel/preset-env @babel/preset-react babel-loader
-```
-*   **`@babel/core`**: O motor principal do Babel.
-*   **`@babel/preset-env`**: Permite o uso do JavaScript moderno (ES6+) convertendo-o para ES5.
-*   **`@babel/preset-react`**: Adiciona suporte para transpilar sintaxe JSX do React.
-*   **`babel-loader`**: A ponte que permite ao Webpack carregar e transpilar arquivos JS/JSX usando o Babel.
-
-### 2. Criar o Arquivo de Configuração `.babelrc`:
-Na raiz do projeto, crie o arquivo `.babelrc` para habilitar os presets:
-```json
-{
-  "presets": [
-    "@babel/preset-env",
-    [
-      "@babel/preset-react",
-      {
-        "runtime": "automatic"
-      }
-    ]
-  ]
-}
-```
-*(Nota: O `"runtime": "automatic"` permite escrever JSX sem a necessidade de importar `React` em todos os arquivos).*
+3. **Criar a estrutura básica de diretórios:**
+   *   **`public/`** — Arquivos estáticos que serão servidos diretamente:
+       *   **`index.html`** — O HTML de entrada da aplicação, contendo a div contêiner `<div id="root"></div>`.
+   *   **`src/`** — O código-fonte JavaScript/React da aplicação:
+       *   **`App.jsx`** — O componente principal da interface.
+       *   **`index.js`** — O ponto de entrada JavaScript, responsável por importar o `createRoot` (de `react-dom/client`) e montar o componente `<App />` na div `#root`.
 
 ---
 
-## 📦 Configurando o Webpack (Empacotamento)
+### Passo 2: Configurando o Babel (Transpilação)
 
-Com o transpilador configurado, agora criamos as regras para o Webpack juntar todos os arquivos da aplicação:
+Para que o Webpack consiga ler e empacotar a sintaxe JSX e os recursos mais modernos do JavaScript (ES6+), precisamos instalar e configurar o transpilador **Babel**:
 
-### 1. Instalar as Dependências do Webpack:
-```bash
-npm install -D webpack webpack-cli webpack-dev-server html-webpack-plugin
-```
-*   **`webpack`**: O empacotador de módulos.
-*   **`webpack-cli`**: Ferramenta de linha de comando para rodar o Webpack.
-*   **`webpack-dev-server`**: Servidor local de desenvolvimento rápido com suporte a recarregamento automático (HMR).
-*   **`html-webpack-plugin`**: Gera o arquivo `index.html` final na pasta de build e injeta automaticamente a tag `<script>` com o bundle gerado.
+1. **Instalar as dependências do Babel como `devDependencies`:**
+   ```bash
+   npm install -D @babel/core @babel/preset-env @babel/preset-react babel-loader
+   ```
+   *   **`@babel/core`**: O motor principal do transpilador Babel.
+   *   **`@babel/preset-env`**: Converte sintaxe JavaScript moderna (ES6+) em ES5 para retrocompatibilidade.
+   *   **`@babel/preset-react`**: Adiciona suporte para transpilar a sintaxe JSX do React.
+   *   **`babel-loader`**: Permite ao Webpack carregar e processar arquivos JS/JSX usando o Babel.
 
-### 2. Criar o Arquivo `webpack.config.js`:
-Crie o arquivo `webpack.config.js` na raiz do projeto:
-```javascript
-import path from 'path';
-import { fileURLToPath } from 'url';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export default {
-  entry: './src/index.js', // O ponto de partida do empacotamento
-  output: {
-    path: path.resolve(__dirname, 'dist'), // Onde o bundle final será gerado
-    filename: 'bundle.js',
-    clean: true, // Limpa a pasta 'dist' a cada novo build
-  },
-  resolve: {
-    extensions: ['.js', '.jsx'], // Extensões que o Webpack irá tentar resolver
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/, // Processar arquivos .js e .jsx
-        exclude: /node_modules/, // Ignorar código de terceiros
-        use: {
-          loader: 'babel-loader', // Usar o Babel configurado no .babelrc
-        },
-      },
-    ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html', // Usar nosso HTML como molde
-    }),
-  ],
-  devServer: {
-    port: 3000,
-    hot: true, // Habilitar Hot Module Replacement (atualização rápida em tela)
-    historyApiFallback: true, // Necessário para roteamento SPA
-  },
-};
-```
+2. **Criar o arquivo `.babelrc`:**
+   Crie o arquivo `.babelrc` na raiz do projeto para ativar os presets:
+   ```json
+   {
+     "presets": [
+       "@babel/preset-env",
+       [
+         "@babel/preset-react",
+         {
+           "runtime": "automatic"
+         }
+       ]
+     ]
+   }
+   ```
+   > [!TIP]
+   > O `"runtime": "automatic"` permite que você escreva JSX sem precisar importar explicitamente `React` no topo de todos os componentes.
 
 ---
 
-## 🏃 Executando o Projeto
+### Passo 3: Configurando o Webpack (Empacotamento)
 
-Adicione os seguintes scripts no arquivo `package.json`:
+Com o Babel pronto para converter o código, precisamos configurar o **Webpack** para juntar todos os módulos, otimizar e gerar o pacote final da aplicação:
+
+1. **Instalar o Webpack e seus plugins de desenvolvimento:**
+   ```bash
+   npm install -D webpack webpack-cli webpack-dev-server html-webpack-plugin
+   ```
+   *   **`webpack`**: O empacotador de módulos.
+   *   **`webpack-cli`**: Interface de linha de comando para gerenciar tarefas do Webpack.
+   *   **`webpack-dev-server`**: Servidor local rápido para desenvolvimento com Hot Module Replacement (HMR).
+   *   **`html-webpack-plugin`**: Cria a pasta de saída, copia o `index.html` e injeta a tag `<script>` com o bundle de forma automatizada.
+
+2. **Criar o arquivo `webpack.config.js`:**
+   Crie o arquivo de configurações na raiz do projeto:
+   ```javascript
+   import path from 'path';
+   import { fileURLToPath } from 'url';
+   import HtmlWebpackPlugin from 'html-webpack-plugin';
+
+   const __filename = fileURLToPath(import.meta.url);
+   const __dirname = path.dirname(__filename);
+
+   export default {
+     entry: './src/index.js', // Arquivo principal que inicia a aplicação
+     output: {
+       path: path.resolve(__dirname, 'dist'), // Pasta de saída dos arquivos compilados
+       filename: 'bundle.js', // Nome do arquivo final empacotado
+       clean: true, // Limpa a pasta 'dist' antes de gerar novos builds
+     },
+     resolve: {
+       extensions: ['.js', '.jsx'], // Extensões que serão resolvidas automaticamente
+     },
+     module: {
+       rules: [
+         {
+           test: /\.(js|jsx)$/, // Processar arquivos .js e .jsx
+           exclude: /node_modules/, // Evitar processamento de pacotes externos
+           use: {
+             loader: 'babel-loader', // Usar as regras do Babel configuradas no .babelrc
+           },
+         },
+       ],
+     },
+     plugins: [
+       new HtmlWebpackPlugin({
+         template: './public/index.html', // Arquivo de origem do HTML
+       }),
+     ],
+     devServer: {
+       port: 3000, // Porta de execução local
+       hot: true, // Ativar atualização rápida em tempo de alteração de arquivo
+       historyApiFallback: true, // Garante que rotas SPA funcionem localmente
+     },
+   };
+   ```
+
+---
+
+### Passo 4: Adicionando Scripts e Executando
+
+No seu arquivo `package.json`, configure a chave `"scripts"` para adicionar os atalhos de execução da aplicação:
+
 ```json
 "scripts": {
   "start": "webpack serve --mode development --open",
@@ -139,14 +131,15 @@ Adicione os seguintes scripts no arquivo `package.json`:
 }
 ```
 
-*   **Para rodar em desenvolvimento (local):**
+*   **Para Executar Localmente (Desenvolvimento):**
     ```bash
     npm start
     ```
-    Isso abrirá automaticamente a aplicação em seu navegador no endereço `http://localhost:3000`.
+    Isso iniciará o servidor local e abrirá a aplicação em `http://localhost:3000`.
 
-*   **Para gerar os arquivos finais de produção:**
+*   **Para Gerar o Pacote Otimizado (Produção):**
     ```bash
     npm run build
     ```
-    Isso gerará a pasta `dist/` contendo o HTML minificado e o arquivo `bundle.js` otimizado pronto para deploy.
+    Isso gerará a pasta `dist/` contendo o HTML minificado e o arquivo `bundle.js` pronto para hospedagem.
+
