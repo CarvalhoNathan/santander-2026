@@ -1,14 +1,19 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+import path from 'path';
+import { fileURLToPath } from 'url';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
     // Ponto de entrada para seu aplicativo
     entry: "./src/index.js",
     // Configuração de saída
     output: {
         // Caminho absoluto do diretório de saída
         path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        clean: true
     },
     // Configuração do módulo
     module: {
@@ -24,8 +29,14 @@ module.exports = {
                     // Opções do Babel
                     options: {
                         // Presets para transpilação
-                        presets: ["@babel/preset-env", "@babel/preset-react"]
+                        presets: [
+                            "@babel/preset-env",
+                            ["@babel/preset-react", { "runtime": "automatic" }]
+                        ]
                     }
+                },
+                resolve: {
+                    fullySpecified: false
                 }
             }
         ]
@@ -54,5 +65,7 @@ module.exports = {
         },
         // Porta do servidor
         port: 3000,
+        hot: true,
+        historyApiFallback: true
     }
-};
+};
