@@ -23,7 +23,8 @@ santander-2026/
 │   ├── 03-arquitetura-e-mentalidade/
 │   ├── 04-preparando-ambiente/
 │   ├── 05-compiladores-empacotadores/
-│   └── 06-configuracao-webpack/
+│   ├── 06-configuracao-webpack/
+│   └── 07-criando-create-react-app/
 └── 04-desafios/                   # Desafios de código e projetos oficiais da DIO
     ├── desafios-de-codigo/
     └── desafios-de-projeto/
