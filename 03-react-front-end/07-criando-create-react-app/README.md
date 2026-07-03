@@ -18,6 +18,13 @@ Estudo sobre a criação, configuração e funcionamento interno de aplicações
 
 ---
 
+## ❌ Desvantagens do CRA
+
+*   **Velocidade de Compilação:** Por usar Webpack sob o capô, a compilação inicial e os recarregamentos (HMR) tornam-se extremamente lentos à medida que o projeto cresce.
+*   **Dificuldade de Customização:** Para alterar qualquer detalhe da configuração do Webpack, é necessário rodar o comando `npm run eject` (que é irreversível e extrai dezenas de arquivos de configuração complexos para a raiz) ou usar pacotes adicionais como `CRACO`.
+*   **Dependências Desatualizadas:** O projeto não recebe mais atualizações frequentes, o que pode acarretar em vulnerabilidades de segurança ou incompatibilidades de pacotes futuros.
+*   **Recomendação Atual:** Para novos projetos React SPA rápidos e modernos, a recomendação atual da comunidade é utilizar o **Vite** ou frameworks modernos como **Next.js** e **Remix**.
+
 ## 🛠️ Comandos Práticos Usados nas Aulas
 
 ### 1. Criando um projeto JavaScript padrão:
@@ -32,18 +39,8 @@ npx create-react-app my-app-ts --template typescript
 ```
 *   Além do comportamento padrão, configura arquivos com a extensão `.tsx` para os componentes React e gera o arquivo de configuração do compilador do TypeScript `tsconfig.json`.
 
----
 
-## ⚠️ Limitações e Problemas de Usar o CRA Hoje em Dia
 
-Apesar de ter sido a ferramenta oficial da comunidade por anos, o **Create React App foi descontinuado** pela equipe oficial do React. Os principais problemas de seu uso hoje são:
-
-1.  **Velocidade de Compilação:** Por usar Webpack sob o capô, a compilação inicial e os recarregamentos (HMR) tornam-se extremamente lentos à medida que o projeto cresce.
-2.  **Dificuldade de Customização:** Para alterar qualquer detalhe da configuração do Webpack, é necessário rodar o comando `npm run eject` (que é irreversível e extrai dezenas de arquivos de configuração complexos para a raiz) ou usar pacotes adicionais como `CRACO`.
-3.  **Dependências Desatualizadas:** O projeto não recebe mais atualizações frequentes, o que pode acarretar em vulnerabilidades de segurança ou incompatibilidades de pacotes futuros.
-4.  **Recomendação Atual:** Para novos projetos React SPA rápidos e modernos, a recomendação atual da comunidade é utilizar o **Vite** ou frameworks modernos como **Next.js** e **Remix**.
-
----
 
 ## 🔑 Variáveis de Ambiente no CRA
 
@@ -90,4 +87,4 @@ O Create React App possui uma forma específica e embutida para lidar com variá
 *   **Visualizando as Variáveis de Ambiente no Terminal:**
     *   **Windows (PowerShell):** `Get-ChildItem Env:` (ou apenas `ls env:`)
     *   **Windows (CMD):** `set`
-    *   **Linux / macOS:** `printenv`
+    *   **Linux / macOS:** `printenv`
