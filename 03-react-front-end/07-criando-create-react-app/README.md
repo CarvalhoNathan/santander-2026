@@ -54,10 +54,40 @@ O Create React App possui uma forma específica e embutida para lidar com variá
     ```env
     REACT_APP_API_URL=https://api.exemplo.com
     REACT_APP_DEBUG_MODE=true
+    REACT_APP_TITULO=Nathan 
     ```
 *   **Como Acessar no Código React:**
     ```javascript
     const apiUrl = process.env.REACT_APP_API_URL;
     ```
+*   **Uso no HTML (`public/index.html`):**
+    É possível injetar variáveis de ambiente diretamente nas tags do HTML envolvendo o nome da variável com símbolos de porcentagem `%`:
+    ```html
+    <title>%REACT_APP_TITULO%</title>
+    ```
 
+*   **Definição Temporária via Terminal:**
+    Você também pode injetar variáveis temporárias de ambiente diretamente pela linha de comando antes de iniciar o servidor:
+    *   **Windows (PowerShell):**
+        ```powershell
+        $env:REACT_APP_API_URL="https://api.exemplo.com"
+        # Para remover:
+        Remove-Item Env:\REACT_APP_API_URL
+        ```
+    *   **Windows (CMD):**
+        ```cmd
+        set REACT_APP_API_URL=https://api.exemplo.com
+        # Para remover:
+        set REACT_APP_API_URL=
+        ```
+    *   **Linux / macOS / Git Bash:**
+        ```bash
+        export REACT_APP_API_URL="https://api.exemplo.com"
+        # Para remover:
+        unset REACT_APP_API_URL
+        ```
 
+*   **Visualizando as Variáveis de Ambiente no Terminal:**
+    *   **Windows (PowerShell):** `Get-ChildItem Env:` (ou apenas `ls env:`)
+    *   **Windows (CMD):** `set`
+    *   **Linux / macOS:** `printenv`
