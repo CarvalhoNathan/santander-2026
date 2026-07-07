@@ -12,5 +12,7 @@ Este módulo é voltado ao estudo do **React**, biblioteca Javascript líder par
 6. **[Configuração de Webpack](./06-configuracao-webpack/)** — Tutorial prático de configuração manual de Webpack e Babel a partir do zero.
 7. **[Criando o primeiro app com CRA](./07-criando-create-react-app/)** — Criando aplicações React com o Create React App (CRA), vantagens e problemas comuns.
 8. **[Criando o primeiro app com Vite](./08-criando-usando-vite/)** — Criando aplicações React com o Vite, estrutura de pastas e funcionamento dos scripts.
-9. **[Componentes e Hooks (Em breve)](#)** — Componentização, uso de hooks integrados (`useState`, `useEffect`, `useContext`) e gerenciamento de estado.
-10. **[Roteamento e APIs (Em breve)](#)** — Navegação com React Router, consumo de dados de APIs e boas práticas de integração.
+9. **[Componentes React](./09-componentes/)** — Conceitos de componentização, reutilização, exportações padrão e nomeadas, e organização de elementos.
+10. **[Hooks e Estado (Em breve)](#)** — Uso de hooks integrados (`useState`, `useEffect`, `useContext`) e gerenciamento de estado.
+11. **[Roteamento e APIs (Em breve)](#)** — Navegação com React Router, consumo de dados de APIs e boas práticas de integração.
+
