@@ -1,6 +1,6 @@
 # Bootcamp Santander 2026 — AI React Front-end
 
-Repositório de estudos, anotações e projetos práticos desenvolvidos durante o [**Bootcamp Santander 2026 - AI React Front-end**](https://web.dio.me/track/1eb0ee72-71d9-4890-9975-52f27ae5aee5), promovido pela [**DIO**](https://dio.me) em parceria com o Santander. O programa foca no desenvolvimento front-end moderno utilizando React e na integração prática de Inteligências Artificiais no fluxo de trabalho.
+Repositório de estudos, anotações e projetos práticos desenvolvidos durante o [**Bootcamp Santander 2026 - AI React Front-end**](https://web.dio.me/track/1eb0ee72-71d9-4890-9975-52f27ae5aee5), promovido pela [**DIO**](https://dio.me) em parceria com o Santander. O programa foca no desenvolvimento front-end moderno utilizando React e na integração prática de Inteligências Artificiais (IA) no fluxo de trabalho.
 
 ---
 
