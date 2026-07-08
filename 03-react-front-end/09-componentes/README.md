@@ -110,4 +110,85 @@ Em JSX, os estilos em linha não são passados como strings. Em vez disso, passa
 return <ul style={{ color: "green", backgroundColor: "black" }}>...</ul>;
 ```
 
+---
+
+## ⚙️ Fundamentos de Props e Comunicação
+
+As **Props** (propriedades) são a forma que os componentes React se comunicam. Elas permitem passar dados do componente pai (*parent*) para o componente filho (*child*), tornando nossos componentes reutilizáveis e dinâmicos.
+
+### 1. Passando e Recebendo Props
+As props são passadas no JSX como atributos HTML e recebidas no componente filho como um objeto na lista de parâmetros da função:
+```tsx
+// Filho:
+interface SaudacaoProps {
+  nome: string;
+}
+function Saudacao({ nome }: SaudacaoProps) {
+  return <h1>Olá, {nome}!</h1>;
+}
+
+// Pai:
+return <Saudacao nome="Nathan" />;
+```
+
+### 2. Valores Padrão (Default Values)
+Podemos definir valores de fallback caso uma propriedade opcional não seja fornecida. Isso é feito diretamente através da atribuição de valores na desestruturação das props no filho:
+```tsx
+interface PerfilProps {
+  nome: string;
+  imagemUrl?: string; // Propriedade opcional (?)
+}
+
+// Se imagemUrl não for passada, usará o link padrão (fallback)
+function Perfil({ nome, imagemUrl = "https://link-padrao.png" }: PerfilProps) {
+  return <img src={imagemUrl} alt={nome} />;
+}
+```
+
+### 3. Passando Props com Spread Operator (`...`)
+Se tivermos um objeto com várias propriedades que correspondem exatamente às props de um componente, podemos usar o operador spread (`...`) para passá-las todas de uma vez de forma limpa:
+```tsx
+const dadosUsuario = {
+  nome: "Nathan Carvalho",
+  cargo: "Desenvolvedor",
+  imagemUrl: "https://avatar.png"
+};
+
+// Em vez de passar uma por uma: nome={dadosUsuario.nome} cargo={dadosUsuario.cargo}...
+return <Perfil {...dadosUsuario} />;
+```
+
+### 4. Children Props (A Prop Especial `children`)
+A propriedade `children` é uma prop embutida especial do React. Ela permite passar elementos ou outros componentes aninhados dentro das tags de fechamento de um componente contêiner:
+```tsx
+// Filho (Contêiner):
+interface MolduraProps {
+  children: React.ReactNode;
+}
+function Moldura({ children }: MolduraProps) {
+  return <div style={{ border: "2px solid black", padding: "10px" }}>{children}</div>;
+}
+
+// Pai (Usando o contêiner):
+return (
+  <Moldura>
+    <h2>Este título é passado como children!</h2>
+    <p>Este texto também.</p>
+  </Moldura>
+);
+```
+
+### 5. Prop Drilling (Perfuração de Props)
+**Prop Drilling** é a situação onde passamos propriedades através de múltiplos níveis de componentes intermediários apenas para alcançar um componente filho no final da árvore, mesmo que os componentes do meio não precisem dessas propriedades para nada.
+
+```mermaid
+graph TD
+    A[Componente App] -->|Passa 'skills'| B[Componente Skills]
+    B -->|Apenas repassa 'skills'| C[Componente HardSkills]
+```
+
+*   **Problema:** Dificulta a manutenção do código, pois qualquer mudança na estrutura de dados obriga o desenvolvedor a alterar todos os componentes intermediários.
+*   **Soluções Comuns:** Para evitar o Prop Drilling em projetos maiores, a comunidade utiliza ferramentas de gerenciamento de estado global como a **Context API** do React, ou bibliotecas como **Redux** ou **Zustand**.
+
+
 

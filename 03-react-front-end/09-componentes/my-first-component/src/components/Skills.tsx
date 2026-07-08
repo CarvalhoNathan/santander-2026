@@ -1,15 +1,20 @@
 import HardSkills from "./HardSkills"
 import SoftSkills from "./SoftSkills"
 
-function Skills() {
+interface SkillsProps {
+    hardSkills?: string[];
+    softSkills?: string[];
+}
+
+function Skills({ hardSkills, softSkills }: SkillsProps) {
     return (
         <>
             <h3>Hards Skills</h3>
-            <HardSkills />
+            <HardSkills skills={hardSkills} />
             <h3>Soft Skills</h3>
-            <SoftSkills />
+            <SoftSkills skills={softSkills} />
         </>
     )
 }
 
-export default Skills
+export default Skills

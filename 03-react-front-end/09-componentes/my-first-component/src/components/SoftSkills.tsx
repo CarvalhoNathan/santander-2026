@@ -1,15 +1,16 @@
-function SoftSkills() {
+interface SoftSkillsProps {
+    skills?: string[];
+}
+
+function SoftSkills({ skills = ["Trabalho em equipe", "Comunicação efetiva", "Resolução de problemas", "Pensamento crítico", "Adaptabilidade"] }: SoftSkillsProps) {
     return (
-        <>
-            <ul>
-                <li>Trabalho em equipe</li>
-                <li>Comunicação efetiva</li>
-                <li>Resolução de problemas</li>
-                <li>Pensamento crítico</li>
-                <li>Adaptabilidade</li>
-            </ul>
-        </>
+        <ul>
+            {skills.map((skill, index) => (
+                <li key={index}>{skill}</li>
+            ))}
+        </ul>
     )
 }
 
 export default SoftSkills
+
