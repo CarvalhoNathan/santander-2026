@@ -60,3 +60,54 @@ import { ComponentName } from './ComponentName';
 // import { ComponentName } from './ComponentName';
 ```
 
+---
+
+## ⚡ Sintaxe JSX e Dinamismo
+
+O **JSX** (JavaScript XML) permite que escrevamos estruturas semelhantes ao HTML diretamente dentro do código JavaScript. Além disso, o JSX nos dá um enorme poder dinâmico ao integrar lógica de programação com a interface.
+
+### 1. Inserindo Expressões Dinâmicas
+Qualquer expressão JavaScript válida (variáveis, chamadas de funções, operações matemáticas) pode ser inserida no meio do JSX envolvendo-a com chaves `{}`:
+```tsx
+const nome = "Nathan";
+return <h1>Olá, {nome}!</h1>; // Renderiza: Olá, Nathan!
+```
+
+### 2. Integração com Objetos
+Podemos armazenar dados estruturados em objetos e exibi-los mapeando suas propriedades diretamente na interface:
+```tsx
+const usuario = {
+  nome: "Nathan Carvalho",
+  cargo: "Desenvolvedor"
+};
+
+return (
+  <div>
+    <h3>{usuario.name}</h3>
+    <p>{usuario.role}</p>
+  </div>
+);
+```
+
+### 3. Executando Funções Auxiliares
+Podemos chamar funções de formatação de dados diretamente de dentro do JSX para transformar informações antes da renderização (como formatar datas ou moedas):
+```typescript
+function formatarData(data: Date) {
+  return new Intl.DateTimeFormat("pt-BR").format(data);
+}
+
+// No retorno do JSX:
+return <p>Acessado em: {formatarData(new Date())}</p>;
+```
+
+### 4. Estilos Inline Dinâmicos
+Em JSX, os estilos em linha não são passados como strings. Em vez disso, passamos um objeto JavaScript. Por isso, a sintaxe utiliza chaves duplas: `style={{ }}`:
+*   A primeira chave `{}` abre a expressão dinâmica JavaScript.
+*   A segunda chave `{}` define o objeto de estilo.
+*   Propriedades CSS compostas usam a nomenclatura camelCase (ex: `backgroundColor` em vez de `background-color`).
+
+```tsx
+return <ul style={{ color: "green", backgroundColor: "black" }}>...</ul>;
+```
+
+
