@@ -17,7 +17,7 @@ santander-2026/
 │   ├── 01-git-e-github/
 │   ├── 02-html5-css3/
 │   └── 03-javascript-es6/
-├── 03-react-front-end/            # Biblioteca React, Hooks, APIs e Projetos
+├── 03-react-front-end/            # Biblioteca React, Hooks e Componentes
 │   ├── 01-introducao-ao-react/
 │   ├── 02-vantagens-e-desvantagens/
 │   ├── 03-arquitetura-e-mentalidade/
@@ -27,7 +27,8 @@ santander-2026/
 │   ├── 07-criando-create-react-app/
 │   ├── 08-criando-usando-vite/
 │   ├── 09-componentes/
-│   └── 10-hooks-e-estado/
+│   ├── 10-hooks-e-estado/
+│   └── 11-componentes-na-pratica/
 └── 04-desafios/                   # Desafios de código e projetos oficiais da DIO
     ├── desafios-de-codigo/
     └── desafios-de-projeto/
@@ -41,8 +42,8 @@ santander-2026/
 | :--- | :--- | :--- |
 | **[01. IA e Produtividade](./01-ia-e-produtividade/)** | Ferramentas de IA (**ChatGPT, Claude, Gemini**), Engenharia de Prompts, Chatbots, Copilotos e Agentes autônomos. | ✅ Concluído |
 | **[02. Fundamentos Web](./02-fundamentos-web/)** | Controle de versão (**Git/GitHub**), semântica com HTML5, estilização com CSS3 (Flexbox/Grid), e programação assíncrona com **JavaScript (ES6+)**. | ⏳ Em Progresso |
-| **[03. React Front-End](./03-react-front-end/)** | Criação de SPAs, componentes funcionais, gerenciamento de estado (Hooks) e consumo de APIs. | ⏳ Em Progresso |
-| **[04. Desafios](./04-desafios/)** | Desafios de algoritmo/código e projetos oficiais entregues ao longo do bootcamp. | ⏳ Em Progresso |
+| **[03. React Front-End](./03-react-front-end/)** | Fundamentos do React, criação de SPAs com Vite, componentes funcionais, gerenciamento de estado (Hooks) e manipulação de eventos. | ⏳ Em Progresso |
+| **[04. Desafios](./04-desafios/)** | Desafios de algoritmo/código e o projeto final integrando React e IA Generativa. | ⏳ Em Progresso |
 
 ---
 
