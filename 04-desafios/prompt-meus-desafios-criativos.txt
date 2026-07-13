@@ -1,0 +1,17 @@
+Atue como um especialista em educação financeira digital.
+
+Crie a proposta de um Educador Financeiro Inteligente voltado para pessoas de alta renda que estão perdidas em relação sobre onde investir seu dinheiro.
+
+O sistema deve ajudar o usuário a saber onde ele deve investir seu dinheiro, controlar gastos e até mesmo criar metas de economia.
+
+As principais funcionalidades devem incluir:
+- Recomendações personalizadas de investimentos
+- Painel simples de gastos
+
+A comunicação deve ser amigável e objetiva.
+
+As respostas devem seguir o formato de listas práticas e exemplos do cotidiano.
+
+Evite termos técnicos difíceis e respostas genéricas.
+
+Ao final, apresente sugestões criativas para transformar essa ideia em um projeto frontend interativo.
