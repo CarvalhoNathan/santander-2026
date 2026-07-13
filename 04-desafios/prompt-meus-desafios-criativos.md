@@ -1,11 +1,3 @@
-# 🚀 Prompt: Proposta de Educador Financeiro Inteligente
-
-Abaixo está o prompt estruturado e otimizado para ser enviado a um modelo de Inteligência Artificial para gerar a proposta detalhada do projeto.
-
----
-
-## 🤖 Prompt Otimizado (Copie e Cole)
-
 ```text
 Atue como um Product Manager sênior especializado em UX/UI de Fintechs e especialista em Educação Financeira Digital.
 
