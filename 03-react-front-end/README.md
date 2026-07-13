@@ -13,6 +13,7 @@ Este módulo é voltado ao estudo do **React**, biblioteca Javascript líder par
 7. **[Criando o primeiro app com CRA](./07-criando-create-react-app/)** — Criando aplicações React com o Create React App (CRA), vantagens e problemas comuns.
 8. **[Criando o primeiro app com Vite](./08-criando-usando-vite/)** — Criando aplicações React com o Vite, estrutura de pastas e funcionamento dos scripts.
 9. **[Componentes React](./09-componentes/)** — Conceitos de componentização, reutilização, exportações padrão e nomeadas, e organização de elementos.
-10. **[Hooks e Estado (Em breve)](#)** — Uso de hooks integrados (`useState`, `useEffect`, `useContext`) e gerenciamento de estado.
+10. **[Hooks e Estado](./10-hooks-e-estado/)** — Uso de hooks integrados (`useState`, `useEffect`, `useContext`), gerenciamento de efeitos colaterais e o papel do Strict Mode.
 11. **[Roteamento e APIs (Em breve)](#)** — Navegação com React Router, consumo de dados de APIs e boas práticas de integração.
+
 

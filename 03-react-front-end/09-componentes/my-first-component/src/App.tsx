@@ -1,6 +1,8 @@
 import './App.css'
 import Profile from './components/Profile'
 import Skills from './components/Skills'
+import { SquareNumber } from './components/SquareNumber';
+import { DoubleNumber } from './components/DoubleNumber';
 
 function App() {
   const user = {
@@ -20,6 +22,8 @@ function App() {
         {/* 3. Passando as listas para demonstrar o Prop Drilling até os componentes filhos de Skills */}
         <Skills hardSkills={hardSkillsList} softSkills={softSkillsList} />
       </Profile>
+      <SquareNumber number={5} />
+      <DoubleNumber number={5} />
     </div>
   )
 }
