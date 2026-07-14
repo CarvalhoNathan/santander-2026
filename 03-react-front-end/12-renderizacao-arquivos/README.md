@@ -108,3 +108,47 @@ function Item({ name, check }: ItemProps) {
   );
 }
 ```
+
+---
+
+## 🔄 O Ciclo de Renderização do React (Trigger, Render, Commit)
+
+Para criarmos interfaces de usuário (UI) interativas e com alto desempenho, precisamos entender o processo interno que o React executa quando atualizamos a tela. Este ciclo ocorre em 3 passos estruturados:
+
+```mermaid
+graph TD
+    A["1. Trigger (Gatilho)"] -->|Dispara a renderização| B["2. Render (Renderização)"]
+    B -->|Calcula as diferenças| C["3. Commit (DOM Real)"]
+    C -->|Pintura física na tela| D["Navegador (Paint)"]
+```
+
+### 1. Trigger (Gatilho)
+É a ação de sinalizar ao React que ele precisa recalcular e atualizar a tela. O gatilho de renderização ocorre em dois momentos:
+*   **Renderização Inicial:** A primeira vez que a aplicação é montada na tela (ex: `root.render(...)`).
+*   **Atualização de Estado:** Qualquer alteração no estado (`useState`) do próprio componente ou de um de seus componentes pais.
+
+---
+
+### 2. Render (Renderização)
+Nesta fase, o React executa as funções dos seus componentes para obter a representação atualizada da estrutura visual (JSX/Virtual DOM).
+*   **Durante a Renderização:** O React percorre recursivamente todos os componentes filhos que necessitam de atualização.
+*   **Otimização por Diffing:** O React compara a árvore de elementos resultante desta renderização com a árvore anterior. Ele detecta exatamente o que mudou (usando o algoritmo de reconciliação de Virtual DOM), sem mexer diretamente no navegador ainda.
+
+---
+
+### 3. Commit (Compromisso) e Pintura (Paint)
+Após calcular o que mudou na fase de Render, o React aplica as modificações necessárias na tela do navegador:
+*   **Commit:** O React altera o DOM real do navegador.
+    *   *Na montagem inicial:* Usa o método `appendChild()` para carregar todos os elementos criados.
+    *   *Nas atualizações:* Modifica **exclusivamente** as propriedades e nós do DOM que foram identificados como alterados (mínima alteração cirúrgica).
+*   **Pintura (Browser Paint):** Após o DOM ser atualizado no passo de Commit, o motor do navegador entra em ação para redesenhar fisicamente os pixels atualizados na tela.
+
+---
+
+## 🎨 Exemplo Prático de Interatividade (Ciclo de Vida na Mala de Viagem)
+Ao transformar nosso componente `Item` em um componente interativo com estado (`useState` e evento de clique):
+1.  **Gatilho (Trigger):** O usuário clica no item da mala. O manipulador de evento `onClick` dispara e chama `setCheck(!isChecked)`.
+2.  **Renderização (Render):** O React reexecuta o componente `Item` com o novo valor de `isChecked`. Ele gera o novo nó JSX contendo `"✅"` e `<del>Nome</del>`.
+3.  **Atualização (Commit & Paint):** O React detecta que apenas o texto do checkbox e a formatação do nome mudaram. Ele atualiza apenas essas propriedades no DOM do navegador, e o navegador pinta a alteração na tela em milissegundos.
+
+```

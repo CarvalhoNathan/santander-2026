@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface Props {
   name: string;
@@ -6,21 +6,21 @@ interface Props {
 }
 
 const Item: React.FC<Props> = ({ name, check }) => {
-  // if (check) {
-  //     return <div className="item">✅ <del>{name}</del></div>
-  // }
+  const [isChecked, setCheck] = useState(check);
 
-  // return <div className="item">⬜ {name}</div>
+  const handleClick = () => {
+    setCheck(!isChecked);
+  };
 
   let itemName: React.ReactNode = name;
 
-  if (check) {
+  if (isChecked) {
     itemName = <del>{name}</del>;
   }
 
   return (
-    <div className="item">
-      {check ? "✅" : "⬜"}
+    <div className="item" onClick={handleClick}>
+      {isChecked ? "✅" : "⬜"}
       {itemName}
     </div>
   );
