@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Item: React.FC<Props> = ({ name, check }) => {
-  const [isChecked, setCheck] = useState(check);
+  const [isChecked, setCheck] = useState(check ?? false);
 
   const handleClick = () => {
     setCheck(!isChecked);
