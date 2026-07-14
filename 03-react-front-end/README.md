@@ -15,7 +15,9 @@ Este módulo é voltado ao estudo do **React**, biblioteca Javascript líder par
 9. **[Componentes React](./09-componentes/)** — Conceitos de componentização, reutilização, exportações padrão e nomeadas, e organização de elementos.
 10. **[Hooks e Estado](./10-hooks-e-estado/)** — Uso de hooks integrados (`useState`, `useEffect`, `useContext`), gerenciamento de efeitos colaterais e o papel do Strict Mode.
 11. **[Manipuladores de Eventos](./11-manipuladores-eventos/)** — Criação de handlers, gerenciamento de propagação, preventDefault e controle de fluxo.
-12. **[Componentes na Prática (Em breve)](#)** — Renderização de assets estáticos e os diferentes tipos de componentes no React.
+12. **[Renderização Condicional](./12-renderizacao-arquivos/)** — Técnicas de if, operador ternário, AND lógico e variáveis JSX.
+13. **[Componentes na Prática (Em breve)](#)** — Renderização de assets estáticos e os diferentes tipos de componentes no React.
+
 
 
 
