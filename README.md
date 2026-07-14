@@ -28,7 +28,8 @@ santander-2026/
 │   ├── 08-criando-usando-vite/
 │   ├── 09-componentes/
 │   ├── 10-hooks-e-estado/
-│   └── 11-componentes-na-pratica/
+│   ├── 11-manipuladores-eventos/
+│   └── 12-componentes-na-pratica/
 └── 04-desafios/                   # Desafios de código e projetos oficiais da DIO
     ├── desafios-de-codigo/
     └── desafios-de-projeto/
