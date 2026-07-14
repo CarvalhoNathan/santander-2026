@@ -43,7 +43,7 @@ santander-2026/
 | Módulo | Conteúdo | Status |
 | :--- | :--- | :--- |
 | **[01. IA e Produtividade](./01-ia-e-produtividade/)** | Ferramentas de IA (**ChatGPT, Claude, Gemini**), Engenharia de Prompts, Chatbots, Copilotos e Agentes autônomos. | ✅ Concluído |
-| **[02. Fundamentos Web](./02-fundamentos-web/)** | Controle de versão (**Git/GitHub**), semântica com HTML5, estilização com CSS3 (Flexbox/Grid), e programação assíncrona com **JavaScript (ES6+)**. | ⏳ Em Progresso |
+| **[02. Fundamentos Web](./02-fundamentos-web/)** | Controle de versão (**Git/GitHub**), semântica com HTML5, estilização com CSS3 (Flexbox/Grid), e programação assíncrona com **JavaScript (ES6+)**. | ✅ Concluído |
 | **[03. React Front-End](./03-react-front-end/)** | Fundamentos do React, criação de SPAs com Vite, componentes funcionais, gerenciamento de estado (Hooks) e manipulação de eventos. | ⏳ Em Progresso |
 | **[04. Desafios](./04-desafios/)** | Desafios de algoritmo/código e o projeto final integrando React e IA Generativa. | ⏳ Em Progresso |
 
@@ -54,8 +54,9 @@ santander-2026/
 - **Controle de Versão:** Git & GitHub
 - **Web Design:** HTML5 semântico, CSS3 responsivo (Mobile-First)
 - **Programação:** JavaScript moderno (ES6+, Arrow Functions, Promises, Async/Await)
-- **Desenvolvimento Componentizado:** React, hooks de estado e de efeitos
+- **Desenvolvimento Componentizado:** React (Vite & CRA), Hooks (`useState`, `useEffect`), Renderização Condicional, Manipulação e Propagação de Eventos
 - **Inteligência Artificial:** Chatbots, Copilotos de código e Agentes aplicados à produtividade no desenvolvimento
+
 
 ---
 
