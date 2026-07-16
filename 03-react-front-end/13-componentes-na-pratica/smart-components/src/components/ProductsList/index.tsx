@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { API_BASE_URL } from "../../settings";
+import { withLoading } from "../hocs/withLoading";
+import { ProductsGrid } from "./ProductsGrid";
 
 interface Product {
   id: number;
@@ -7,6 +9,9 @@ interface Product {
   price: number;
   description: string;
 }
+
+// Criando o componente enriquecido pelo HOC withLoading
+const ProductsGridWithLoading = withLoading(ProductsGrid);
 
 export default function ProductsList() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -30,29 +35,12 @@ export default function ProductsList() {
       });
   }, []);
 
-  if (isLoading) {
-    return (
-      <div>
-        <h2>Products</h2>
-        <p>🔄️ Loading data...</p>
-      </div>
-    );
-  }
-
   return (
     <div>
       <h2>Products</h2>
-      <ul className="list">
-        {products.map(({ id, title, price, description }) => (
-          <li key={id}>
-            <p>
-              #{id} {title}
-            </p>
-            <p className="price">${price}</p>
-            <p>{description}</p>
-          </li>
-        ))}
-      </ul>
+      {/* Utilizando o componente enriquecido pelo HOC */}
+      <ProductsGridWithLoading isLoading={isLoading} products={products} />
     </div>
   );
 }
+

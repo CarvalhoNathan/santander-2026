@@ -87,7 +87,37 @@ São a face do aplicativo. Eles sabem **como as coisas se parecem**:
 
 ---
 
-## 🛠️ Refatorando para Smart/Dumb na Prática
-O arquivo [ProductsList/index.jsx](file:///c:/Users/Usuario/Desktop/santander-2026/03-react-front-end/13-componentes-na-pratica/smart-components/src/components/ProductsList/index.jsx) foi criado inicialmente como um **Smart Component** porque carrega a lógica de fetch da API e o estado de carregamento diretamente. 
+## 🛠️ Refatoração Arquitetural e High Order Components (HOCs)
 
-Para melhorar o Design do código, podemos futuramente isolar a listagem em si em um componente burro (`ProductCard` ou `ProductGrid`) que recebe apenas a lista limpa de produtos e a renderiza.
+Na prática, refatoramos o nosso projeto [smart-components](file:///c:/Users/Usuario/Desktop/santander-2026/03-react-front-end/13-componentes-na-pratica/smart-components/) para implementar de forma combinada os padrões de **Smart/Dumb Components** e **High Order Components (HOCs)**:
+
+1.  **Dumb Component ([ProductsGrid.tsx](file:///c:/Users/Usuario/Desktop/santander-2026/03-react-front-end/13-componentes-na-pratica/smart-components/src/components/ProductsList/ProductsGrid.tsx)):** Recebe apenas a lista de produtos limpa via props e a exibe em tela. Não sabe nada sobre APIs ou estados de carregamento.
+2.  **High Order Component ([withLoading.tsx](file:///c:/Users/Usuario/Desktop/santander-2026/03-react-front-end/13-componentes-na-pratica/smart-components/src/components/hocs/withLoading.tsx)):** Uma função pura que intercepta as props de qualquer componente recebido. Se `isLoading` for verdadeiro, renderiza a animação de carregamento; caso contrário, renderiza o componente original.
+3.  **Smart Component ([ProductsList/index.tsx](file:///c:/Users/Usuario/Desktop/santander-2026/03-react-front-end/13-componentes-na-pratica/smart-components/src/components/ProductsList/index.tsx)):** Gerencia o fetch dos dados da API, controla o estado de `isLoading` e alimenta o componente composto `ProductsGridWithLoading`.
+
+---
+
+## 🔮 3. High Order Components (HOCs) Detalhado
+
+Um **HOC** é um padrão avançado no React para reutilizar lógica de componentes. Ele é uma **função pura** que recebe um componente como parâmetro e retorna um novo componente enriquecido/modificado:
+
+$$\text{Componente Enriquecido} = f(\text{Componente Original})$$
+
+### Estrutura Inicial de um HOC:
+O esqueleto básico de um HOC envolve retornar uma função componente que renderiza o componente envelopado:
+```tsx
+import React from 'react';
+
+export function withFeature<P extends object>(WrappedComponent: React.ComponentType<P>) {
+  return function EnhancedComponent(props: P) {
+    // Adiciona lógica extra aqui...
+    return <WrappedComponent {...props} />;
+  };
+}
+```
+
+### Casos de Uso Comuns para HOCs:
+*   **Controle de Acesso / Proteção de Rotas:** Verificar se o usuário está logado antes de renderizar a página (`withAuth`).
+*   **Estilização ou Temas Globais:** Injetar configurações de paleta de cores ou temas escuros/claros (`withTheme`).
+*   **Tratamento de Carregamento ou Erros:** Exibir indicadores de carregamento enquanto dados assíncronos são buscados (`withLoading`).
+
