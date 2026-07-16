@@ -121,3 +121,42 @@ export function withFeature<P extends object>(WrappedComponent: React.ComponentT
 *   **Estilização ou Temas Globais:** Injetar configurações de paleta de cores ou temas escuros/claros (`withTheme`).
 *   **Tratamento de Carregamento ou Erros:** Exibir indicadores de carregamento enquanto dados assíncronos são buscados (`withLoading`).
 
+---
+
+## ⚡ 4. Aplicações Práticas e HOCs Baseados em Classes
+
+### A. Reusabilidade com Múltiplos Componentes
+A grande vantagem do padrão HOC é o reaproveitamento de código em diferentes partes da aplicação. No nosso projeto prático, criamos um segundo componente inteligente chamado [ClientsList/index.tsx](file:///c:/Users/Usuario/Desktop/santander-2026/03-react-front-end/13-componentes-na-pratica/smart-components/src/components/ClientsList/index.tsx) que consome dados de usuários.
+*   Ambos os componentes (`ProductsList` e `ClientsList`) utilizam exatamente o **mesmo** HOC `withLoading`.
+*   Isso prova que a lógica condicional de carregamento visual foi centralizada em uma única função pura de fácil manutenção.
+
+### B. Criando um HOC Utilizando Componentes de Classe
+Embora os componentes funcionais sejam a convenção moderna, também podemos escrever HOCs que utilizam a sintaxe de classes do ES6. Isso é extremamente útil em codebases legadas que precisam se comunicar com o ciclo de vida tradicional do React.
+
+Criamos o HOC de logging chamado [withLogger.tsx](file:///c:/Users/Usuario/Desktop/santander-2026/03-react-front-end/13-componentes-na-pratica/smart-components/src/components/hocs/withLogger.tsx) usando classes:
+
+```tsx
+import { Component, ComponentType } from "react";
+
+export function withLogger<P extends object>(WrappedComponent: ComponentType<P>) {
+  // Retorna uma classe anônima que estende React.Component
+  return class WithLogger extends Component<P> {
+    componentDidMount() {
+      console.log(`[Logger HOC] Componente montado com sucesso no DOM!`);
+    }
+
+    componentWillUnmount() {
+      console.log(`[Logger HOC] Componente desmontado do DOM!`);
+    }
+
+    render() {
+      // Repassa todas as props para o componente envelopado
+      return <WrappedComponent {...this.props} />;
+    }
+  };
+}
+```
+
+*   **Funcionamento:** Envolvemos as nossas listas (`ProductsList` e `ClientsList`) com `withLogger` na inicialização do `App.tsx`. Toda vez que a tela carrega, o ciclo de vida da classe do HOC intercepta a montagem e gera avisos de log organizados no console do desenvolvedor.
+
+
