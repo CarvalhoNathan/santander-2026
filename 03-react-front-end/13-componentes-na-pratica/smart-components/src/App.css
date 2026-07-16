@@ -1,0 +1,29 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.list {
+    text-align: left;
+    padding: 0;
+}
+
+.list li {
+    list-style: none;
+    color: #f1f1f1;
+    background-color: #1d1d1d;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+.list li .price {
+    color: #00f716;
+    font-weight: bold;
+}
+
+.list li p {
+    margin: 0;
+}
