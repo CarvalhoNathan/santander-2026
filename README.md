@@ -60,5 +60,5 @@ santander-2026/
 
 ---
 
-Repositório criado por **Nathan Carvalho**, com base nas aulas ministradas por **Michele Ambrosio**.
+Repositório criado por **Nathan Carvalho**, com base nas aulas ministradas por **[Michele Ambrosio](https://github.com/micheleambrosio)**.
 
