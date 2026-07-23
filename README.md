@@ -45,7 +45,7 @@ santander-2026/
 | **[01. IA e Produtividade](./01-ia-e-produtividade/)** | Ferramentas de IA (**ChatGPT, Claude, Gemini**), Engenharia de Prompts, Chatbots, Copilotos e Agentes autônomos. | ✅ Concluído |
 | **[02. Fundamentos Web](./02-fundamentos-web/)** | Controle de versão (**Git/GitHub**), semântica com HTML5, estilização com CSS3 (Flexbox/Grid), e programação assíncrona com **JavaScript (ES6+)**. | ✅ Concluído |
 | **[03. React Front-End](./03-react-front-end/)** | Fundamentos do React, criação de SPAs com Vite, componentes funcionais, gerenciamento de estado (Hooks) e manipulação de eventos. | ✅ Concluído |
-| **[04. Desafios](./04-desafios/)** | Desafios de algoritmo/código e o projeto final integrando React e IA Generativa. | ⏳ Em Progresso |
+| **[04. Desafios](./04-desafios/)** | Desafios de algoritmo/código e o projeto final integrando React e IA Generativa. | ✅ Concluído |
 
 ---
 
